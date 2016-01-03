@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<html lang="en">
+<head>
+    <title>Social transfers</title>
+    <link rel="stylesheet" href="/css/pure-min-0.6.0.css">
+    <link rel="stylesheet" href="/css/side-menu.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+    <div id="layout">
+        <a href="#menu" id="menuLink" class="menu-link">
+            <!-- Hamburger icon -->
+            <span></span>
+        </a>
+        <div id="menu">
+            <div class="pure-menu">
+                <a class="pure-menu-heading" href="/">Woops</a>
+
+                <ul class="pure-menu-list">
+                    <c:choose>
+                        <c:when test="${not empty currentUser}">
+                            <li class="pure-menu-item menu-item-divided">
+                                <a href="/profile" class="pure-menu-link">Signed in as <br>${currentUser.name}</a>
+                            </li>
+                            <li class="pure-menu-item menu-item-divided">
+                                <a href="/transfers/new" class="pure-menu-link">New transfer</a>
+                            </li>
+                            <li class="pure-menu-item"><a href="/sessions/destroy" class="pure-menu-link">Sign out</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="pure-menu-item"><a href="/sessions/new" class="pure-menu-link">Sign in</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
