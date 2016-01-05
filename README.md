@@ -12,4 +12,4 @@ Debug at port 5005
 ruby -run -ehttpd . -p8000
 ```
 
-Then open your browser on http://localhost:8000/Slides.html
+Then open your browser on [http://localhost:8000/Slides.html](http://localhost:8000/Slides.html)

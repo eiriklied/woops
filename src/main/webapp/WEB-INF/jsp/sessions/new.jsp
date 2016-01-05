@@ -2,7 +2,7 @@
 
 <div class="header">
     <h1>Sign in</h1>
-    <h2>Where dreams come true</h2>
+    <h2>And start transferring :)</h2>
 </div>
 
 <div class="content">

@@ -9,7 +9,7 @@
 <div class="content">
     <c:choose>
         <c:when test="${empty currentUser}">
-            <h1 class="align-center">Please <a href="/sessions/new">sign in</a></h1>
+            <h1 class="align-center push-1-large">Please <a href="/sessions/new">sign in</a></h1>
         </c:when>
         <c:when test="${not empty transfers}">
             <div class="transfers push-1">
@@ -23,7 +23,7 @@
             </div>
         </c:when>
         <c:otherwise>
-            <h1>No transfers yet!</h1>
+            <h1 class="align-center push-1-large">You have no transfers yet :(</h1>
         </c:otherwise>
     </c:choose>
 </div>

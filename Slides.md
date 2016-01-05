@@ -1,7 +1,7 @@
 class: middle, center
 
 
-# Hacking av webapper
+# Å hacke en webapp
 
 
 
@@ -16,20 +16,22 @@ class: middle, center
 class: middle
 
 # Disclaimer
-- Jeg er _ikke_ en sikkerhetsekspert
-- Dette er veldig praktisk orientert
+- _Ikke_ sikkerhetsekspert
+- Praktisk orientert
 - Skal gjennomgå _noen få_ sikkerhetshull
-- Forekommer i de fleste Java webapplikasjoner
+- Ikke _store_ sikkerhetshull...
+- ...men finnes i mange Java webapplikasjoner
 
 ---
 class: middle
 
 ## Vi skal _ikke_ se på
 
+- Mass assignment
+- Kryptering, TLS (HTTPS)
 - Nettverk / Soner / Brannmurer
 - SQL injection
 - Remote code execution
-- Kryptering, TLS (HTTPS)
 - Innlogging / passord / 2-faktor
 
 ---
@@ -37,11 +39,11 @@ class: middle
 
 # Vi skal se på
 
-### XSS
+### XSS - for å lese private data
 
-### Cookies
+### Usikker sesjonscookie - for å stjele en sesjons med XSS
 
-### CSRF
+### CSRF - for å lure noen til å overføre penger
 
 ---
 class: middle
@@ -140,7 +142,7 @@ class: middle
 
 # Angreps-app
 
-- [Dum website](http://hacker.app:3000/xss?content=Cookie)
+- [Hacker.app](http://hacker.app:3000/xss?content=Cookie)
 
 ---
 class: middle
@@ -202,18 +204,40 @@ class: middle
 
 Ufrivillig overføring på Woops!
 
-- Implementer alltid CSRF-beskyttelse for state-changes!
-- Må _ikke_ være opt-in!
+- Implementer alltid CSRF-beskyttelse for `POST/PUT/PATCH/DELETE`!
+- Må _alltid_ være skrudd på!
+
+---
+class: middle
+# Hvordan?
+
+- Legg et csrf-token på sesjon/cookie
+- Lag et filter som sjekker at alle POST/PUT/PATCH/DELETE requests inneholder
+  token
+- Token må legges på som hidden felt i alle forms:  
+  ```html
+  <input type="hidden" name="csrf_token" value="${csrfToken}"/>
+  ```
 
 ---
 class: middle
 
-# Min mening
+# Til slutt
 
-- Vi er bare mennesker, vi glemmer ting som er opt-in
-- Sikkerhet må være skrudd på som default
-- Alltid ha en djevel i bakhodet som tenker worst case :)
-- Bruk fulle rammeverk som tar tak i disse problemene by default.
+---
+class: middle
+
+# Til slutt
+
+- Vi er bare mennesker, vi glemmer ting som er frivillig
+- Default må være sikre innstillinger
+- Micro libraries = ikke sikkert som default
+- Bruk fulle webrammeverk som gir deg dette ut av boksen.
   - Play framework (Java)
   - Django (Python)
   - Rails (Ruby)
+
+---
+class: middle center
+
+# Spørsmål?

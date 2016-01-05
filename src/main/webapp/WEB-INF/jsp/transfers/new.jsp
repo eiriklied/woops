@@ -7,6 +7,7 @@
 
 <div class="content">
     <form:form action="/transfers" method="post" class="pure-form pure-form-stacked">
+
         <label for="amount">Amount (NOK)</label>
         <input id="amount" name="amount" type="number" autofocus>
         <label for="to">Receivers phone</label>

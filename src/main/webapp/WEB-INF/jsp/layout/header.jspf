@@ -7,7 +7,7 @@
 <head>
     <title>Social transfers</title>
     <link rel="stylesheet" href="/css/pure-min-0.6.0.css">
-    <link rel="stylesheet" href="/css/side-menu.css">
+    <link rel="stylesheet" href="/css/menu.css">
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
@@ -17,14 +17,14 @@
             <span></span>
         </a>
         <div id="menu">
-            <div class="pure-menu">
+            <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
                 <a class="pure-menu-heading" href="/">Woops</a>
 
                 <ul class="pure-menu-list">
                     <c:choose>
                         <c:when test="${not empty currentUser}">
-                            <li class="pure-menu-item menu-item-divided">
-                                <a href="/profile" class="pure-menu-link">Signed in as <br>${currentUser.name}</a>
+                            <li class="pure-menu-item">
+                                <a href="/profile" class="pure-menu-link profile">Signed in as <strong>${currentUser.name}</strong></a>
                             </li>
                             <li class="pure-menu-item menu-item-divided">
                                 <a href="/transfers/new" class="pure-menu-link">New transfer</a>
@@ -38,4 +38,5 @@
                 </ul>
             </div>
         </div>
+
         <div id="main">
