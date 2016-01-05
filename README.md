@@ -13,3 +13,5 @@ ruby -run -ehttpd . -p8000
 ```
 
 Then open your browser on [http://localhost:8000/Slides.html](http://localhost:8000/Slides.html)
+
+# Known security issues
