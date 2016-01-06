@@ -41,7 +41,7 @@ class: middle
 
 ### XSS - for å lese private data
 
-### Usikker sesjonscookie - for å stjele en sesjons med XSS
+### Usikker sesjonscookie - for å stjele en sesjon med XSS
 
 ### CSRF - for å lure noen til å overføre penger
 
@@ -132,7 +132,7 @@ class: middle
 
 # Angrep 2
 
-## Stjele sesjons-cookie
+## Stjele en sesjon
 
 ---
 class: middle
@@ -219,6 +219,7 @@ class: middle
 - Legg et csrf-token på sesjon/cookie
 - Lag et filter som sjekker at alle POST/PUT/PATCH/DELETE requests inneholder
   token
+- Filteret må avvise requests som ikke innholder riktig token
 - Token må legges på som hidden felt i alle forms:  
   ```html
   <input type="hidden" name="csrf_token" value="${csrfToken}"/>
